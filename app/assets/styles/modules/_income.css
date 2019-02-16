@@ -1,0 +1,18 @@
+.income {
+  max-width: 100%;
+  text-align: center;
+  border-bottom: 2px solid #E7E7E7;
+  margin: 20px 10px;
+  
+  @mixin atMedium {
+    float: left;
+    width: 45%;
+    border-bottom: none;
+    margin: 0 30px;
+  }
+}
+
+.income__title {
+  color: $mainBlue;
+}
+

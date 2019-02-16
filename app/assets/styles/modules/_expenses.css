@@ -1,0 +1,15 @@
+.expenses {
+  max-width: 100%;
+  text-align: center;
+  margin: 20px 10px;
+  
+  @mixin atMedium {
+    float: left;
+    width: 45%;
+    margin: 0 30px;
+  }
+}
+
+.expenses__title {
+  color: $mainRed;
+}

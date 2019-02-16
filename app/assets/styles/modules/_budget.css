@@ -1,0 +1,98 @@
+.budget {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  color: #FFF;
+  
+  @mixin atSmall {
+    width: 350px;
+  }
+}
+
+.budget__title {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 5px;
+  font-weight: 300;
+  
+  @mixin atMedium {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+}
+
+.budget__value {
+  font-size: 2.2rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  
+  @mixin atMedium {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+  }
+}
+
+.budget__income,
+.budget__expenses {
+  
+  padding: 8px;
+  text-transform: uppercase;
+  margin: 0 30px 0 30px;
+  
+  @mixin atSmall {
+    margin: 0;
+    padding: 12px;
+  }
+}
+
+.budget__income {
+  background-color: $mainBlue;
+  margin-bottom: 10px;
+}
+
+.budget__expenses {
+  background-color: $mainRed;
+}
+
+.budget__income--text,
+.budget__expenses--text {
+  float: left;
+  font-size: .9rem;
+  color: #000;
+  margin-top: 2px;
+  
+  @mixin atSmall {
+    font-size: 1rem;
+  }
+}
+
+.budget__income--value,
+.budget__expenses--value {
+  letter-spacing: 1px;
+  float: left;
+  margin-top: 2px;
+}
+
+.budget__income--percentage,
+.budget__expenses--percentage {
+  float: left;
+  width: 34px;
+  font-size: .8rem;
+  padding: 3px 0;
+  margin-left: 10px;
+  
+  @mixin atSmall {
+    font-size: .9rem;
+  }
+}
+
+.budget__expenses--percentage {
+  background-color: $lightRed;
+  text-align: center;
+  border-radius: 3px;
+}

@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  
+  @mixin atSmall {
+    width: 70%;
+    margin: 10px auto;
+  }
+  
+  @mixin atMedium {
+    width: 80%;
+    margin: 15px auto;
+  }
+}
