@@ -4,8 +4,8 @@
   margin: 20px 10px;
   
   @mixin atMedium {
-    float: left;
-    width: 45%;
+    float: right;
+    width: 41%;
     margin: 0 30px;
   }
 }

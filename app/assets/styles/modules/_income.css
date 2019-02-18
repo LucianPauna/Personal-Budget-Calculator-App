@@ -6,7 +6,7 @@
   
   @mixin atMedium {
     float: left;
-    width: 45%;
+    width: 41%;
     border-bottom: none;
     margin: 0 30px;
   }

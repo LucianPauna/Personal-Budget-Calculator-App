@@ -661,7 +661,7 @@ h2 {
 @media (min-width: 800px) {
 
 .container {
-    width: 80%;
+    width: 90%;
     margin: 15px auto
 }
   }
@@ -677,7 +677,7 @@ h2 {
 
 .income {
     float: left;
-    width: 45%;
+    width: 41%;
     border-bottom: none;
     margin: 0 30px
 }
@@ -696,8 +696,8 @@ h2 {
 @media (min-width: 800px) {
 
 .expenses {
-    float: left;
-    width: 45%;
+    float: right;
+    width: 41%;
     margin: 0 30px
 }
   }
