@@ -390,8 +390,12 @@ h2 {
   position: relative;
 }
 
-.bottom {
-  
+.red {
+  color: #ee5544 !important;
+}
+
+.red-focus:focus {
+  border: 1px solid #ee5544 !important;
 }
 
 .right {

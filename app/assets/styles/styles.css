@@ -3,7 +3,7 @@
 @import './base/_mixins';
 @import './base/_global';
 @import './modules/_top';
-@import './modules/_bottom';
+@import './modules/_red';
 @import './modules/_right';
 @import './modules/_budget';
 @import './modules/_add';

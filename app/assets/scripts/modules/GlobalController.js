@@ -12,7 +12,11 @@ var GlobalController = (function(budgetCtrl, uiCtrl) {
       if (event.keyCode === 13 || event.which === 13) {
         ctrlAddItem();
       }
-    });    
+    });
+    
+    document.querySelector(dom.container).addEventListener('click', ctrlDeleteItem);
+    
+    document.querySelector(dom.inputType).addEventListener('change', uiCtrl.changeType);
   };
   
   var updateBudget = function() {
@@ -26,6 +30,19 @@ var GlobalController = (function(budgetCtrl, uiCtrl) {
     // 3. Display the budget
     uiCtrl.displayBudget(budget);
   };
+  
+  var updatePercentages = function() {
+    
+    // 1. Calculate the percentages
+    budgetCtrl.calculatePercentages();
+    
+    // 2. Read percentages from the budget controller
+    var percentages = budgetCtrl.getPercentages();
+    
+    // 3. Update the UI with the new percentages
+    uiCtrl.displayPercentages(percentages);
+    
+  }
   
   var ctrlAddItem = function() {
     var input, newItem;
@@ -46,17 +63,37 @@ var GlobalController = (function(budgetCtrl, uiCtrl) {
       
       // 5. Calculate and update budget
       updateBudget();
+      
+      // 6. Calculate and update percentages
+      updatePercentages();
     }
   };
   
   var ctrlDeleteItem = function(event) {
+    var itemID, splitID, type, ID;
     
+    itemID = event.target.parentNode.parentNode.parentNode.id;
+    
+    if (itemID) {
+      splitID = itemID.split('-');
+      type = splitID[0];
+      ID = parseInt(splitID[1]);
+    }
+    // 1. Delete the item from the data structure
+    budgetCtrl.deleteItem(type, ID);
+    
+    // 2. Delete the data from the UI
+    uiCtrl.deleteListItem(itemID);
+    
+    // 3. Update and show the new budget
+    updateBudget();
     
   };
   
   return {
     init: function() {
       console.log('Application has started!');
+      uiCtrl.displayDate();
       uiCtrl.displayBudget({
         budget: 0,
         totalInc: 0,

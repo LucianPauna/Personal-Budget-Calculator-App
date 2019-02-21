@@ -1,0 +1,7 @@
+.red {
+  color: $mainRed !important;
+}
+
+.red-focus:focus {
+  border: 1px solid $mainRed !important;
+}
