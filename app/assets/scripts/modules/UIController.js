@@ -25,7 +25,7 @@ var UIController = (function() {
     int = numSplit[0];
     dec = numSplit[1];
     if (int.length > 3) {
-      int = int.substr(0, int.length -3) + ',' + int,substr(int.length - 3, 3);
+      int = int.substr(0, int.length -3) + ',' + int.substr(int.length - 3, 3);
     }
     
     type === 'exp' ? sign = '-' : sign = '+';
