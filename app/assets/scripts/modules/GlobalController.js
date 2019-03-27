@@ -72,7 +72,7 @@ var GlobalController = (function(budgetCtrl, uiCtrl) {
   var ctrlDeleteItem = function(event) {
     var itemID, splitID, type, ID;
     
-    itemID = event.target.parentNode.parentNode.parentNode.id;
+    itemID = event.target.parentNode.parentNode.parentNode.parentNode.id;
     
     if (itemID) {
       splitID = itemID.split('-');
@@ -87,6 +87,9 @@ var GlobalController = (function(budgetCtrl, uiCtrl) {
     
     // 3. Update and show the new budget
     updateBudget();
+    
+    // 4. Calculate and update percentages
+    updatePercentages();
     
   };
   

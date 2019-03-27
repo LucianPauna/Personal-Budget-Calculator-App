@@ -34,47 +34,52 @@ var BudgetController = (function() {
     
     var data = {
       allItems: {
-        exp: [],
-        inc: []
+          exp: [],
+          inc: []
       },
       totals: {
-        exp: 0,
-        inc: 0
+          exp: 0,
+          inc: 0
       },
       budget: 0,
       percentage: -1
-    }
+    };
     
     return {
       addItem: function(type, des, val) {
-        var newItem, ID;
-        
-        // Create new // ID
-        if(data.allItems[type].length > 0) {
-          ID = data.allItems[type][data.allItems[type].length -1].id + 1;
-        } else {
-          ID = 0;
-        }
-        
-        // Create a new item based on "inc" or "exp"
-        if (type === 'exp') {
-          newItem = new Expenses(ID, des, val);
-        } else if (type === 'inc') {
-          newItem = new Income(ID, des, val);
-        }
-        
-        // Push it into the data structure
-        data.allItems[type].push(newItem);
-        
-        // Return the new item
-        return newItem;  
+          var newItem, ID;
+          
+          //[1 2 3 4 5], next ID = 6
+          //[1 2 4 6 8], next ID = 9
+          // ID = last ID + 1
+          
+          // Create new ID
+          if (data.allItems[type].length > 0) {
+              ID = data.allItems[type][data.allItems[type].length - 1].id + 1;
+          } else {
+              ID = 0;
+          }
+          
+          // Create new item based on 'inc' or 'exp' type
+          if (type === 'exp') {
+              newItem = new Expenses(ID, des, val);
+          } else if (type === 'inc') {
+              newItem = new Income(ID, des, val);
+          }
+          
+          // Push it into our data structure
+          data.allItems[type].push(newItem);
+          
+          // Return the new element
+          console.log(data.allItems[type]);
+          return newItem;
       },
       
       deleteItem: function(type, id) {
         var ids, index;
         
         ids = data.allItems[type].map(function(current) {
-          return current.id;
+                return current.id;
         });
         
         index = ids.indexOf(id);
